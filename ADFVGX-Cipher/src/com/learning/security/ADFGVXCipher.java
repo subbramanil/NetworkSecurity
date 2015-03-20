@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
-
+/*Simulate ADFVGX Cipher Encryption & Decryption*/
 public class ADFGVXCipher {
 
 	static char cipherSquare[][];
