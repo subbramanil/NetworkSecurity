@@ -1,0 +1,38 @@
+.canvasStyle {
+	border: 2px solid #000;
+}
+
+.colorSpan {
+	width: 75px;
+	height: 50px;
+	padding: 10px;
+	cursor: pointer;
+	float: left;
+	margin: 5px;
+}
+
+.sizeSpan {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	border: 2px solid #986928;
+	margin-left: 10px;
+}
+
+.toolSpan {
+	width: 100px;
+	height: 75px;
+	cursor: pointer;
+	padding: 25px;
+	border: 2px solid #cb3594;
+	float: left;
+	margin: 5px;
+}
+
+.borderSelected{
+	border: 5px solid #000;
+}
+
+.borderNone{
+	border: none;
+}
