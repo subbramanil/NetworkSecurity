@@ -1,5 +1,4 @@
 
-// require("./index.js");
 // Load required modules
 var http    = require("http");              // http server core module
 var express = require("express");           // web framework external module
@@ -25,3 +24,4 @@ var socketServer = io.listen(webServer, {"log level":1});
 
 // Start EasyRTC server
 var rtc = easyrtc.listen(httpApp, socketServer);
+

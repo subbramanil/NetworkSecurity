@@ -17,16 +17,8 @@ var dao = require('./userDao.js');
 var nsp = io.of('/appchallenge');
 
 var server = http.listen(process.env.PORT || 8080,function(){
-	logMsg("Server listening on port "+server.address().port);
+	console.log("Server listening on port "+server.address().port);
 });
-
-var getRoomDetails = function(data){
-    logMsg("server.getRoomDetails() entry");
-    var room = dao.findRoom();
-    logMsg(room);
-    logMsg("server.getRoomDetails() exit");
-    return room;
-};
 
 // module.exports = getRoomDetails; 
 
@@ -139,4 +131,12 @@ nsp.on('connection', function(socket){
             }
             socket.emit('log', array);
         }
+
+        var getRoomDetails = function(data){
+            logMsg("server.getRoomDetails() entry");
+            var room = dao.findRoom();
+            logMsg(room);
+            logMsg("server.getRoomDetails() exit");
+            return room;
+        };
 });

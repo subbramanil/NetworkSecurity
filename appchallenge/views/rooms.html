@@ -6,7 +6,8 @@
 <meta name='description' content='Group Chat app' />
 <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1'>
 
-<link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
+<link rel="stylesheet" type="text/css" href="/css/easyrtc.css" />
+<link rel="stylesheet" type="text/css" href="/css/demo_audio_video_simple.css" />
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -34,11 +35,11 @@
 <script type="text/javascript" src="/js/script.js"></script>
 <script type="text/javascript" src="/js/angular.js"></script>
 <script type="text/javascript" src="/js/sock.js"></script>
-<script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
-<script type="text/javascript" src="js/demo_audio_video_simple.js"></script>
+<script type="text/javascript" src="/js/easyrtc.js"></script>
+<script type="text/javascript" src="/js/call.js"></script>
 
 <body onload="connect();">
-	<div class="container-fluid" ng-controller="RoomController as roomController">
+	<div class="container-fluid" id="container" ng-controller="RoomController as roomController">
 		<div class="row">
 			<!-- <div ng-repeat="user in usersList" class="panel panel-primary col-md-6"> -->
 
@@ -72,19 +73,23 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">Testing</div>
 				<div class="panel-body">
-					<div id="connectControls">
-		                <div id="iam">Not yet connected...</div>
-		                <br />
-		                <strong>Connected users:</strong>
-		                <div id="otherClients"></div>
-		            </div>
-		            <div id="videos">
-		                <video autoplay="autoplay" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
-		                <div style="position:relative;float:left;">
-		                <video autoplay="autoplay" id="callerVideo"></video>
-		                </div>
-		                <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
-		            </div>
+					<div id="main">
+						<div id="demoContainer">
+							<div id="connectControls">
+				                <div id="iam">Not yet connected...</div>
+				                <br />
+				                <strong>Connected users:</strong>
+				                <div id="otherClients"></div>
+				            </div>
+				            <div id="videos">
+				                <video autoplay="autoplay" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
+				                <div style="position:relative;float:left;">
+				                <video autoplay="autoplay" id="callerVideo"></video>
+				                </div>
+				                <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
+				            </div>
+				        </div>
+			        </div>
 				</div>
 			</div>
 		</div>

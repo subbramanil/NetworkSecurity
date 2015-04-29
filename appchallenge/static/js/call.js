@@ -9,21 +9,9 @@ function connect() {
     console.log("connect() exit");
  }
 
-
-function clearConnectList() {
-    console.log("clearConnectList() entry");
-    var otherClientDiv = document.getElementById('otherClients');
-    while (otherClientDiv.hasChildNodes()) {
-        otherClientDiv.removeChild(otherClientDiv.lastChild);
-    }
-    console.log("clearConnectList() exit");
-}
-
-
 function convertListToButtons (roomName, data, isPrimary) {
     clearConnectList();
     console.log("convertListToButtons() entry");
-    console.log(roomName + data + isPrimary);
     var otherClientDiv = document.getElementById('otherClients');
     for(var easyrtcid in data) {
         var button = document.createElement('button');
@@ -38,6 +26,15 @@ function convertListToButtons (roomName, data, isPrimary) {
         otherClientDiv.appendChild(button);
     }
     console.log("convertListToButtons() exit");
+}
+
+function clearConnectList() {
+    console.log("clearConnectList() entry");
+    var otherClientDiv = document.getElementById('otherClients');
+    while (otherClientDiv.hasChildNodes()) {
+        otherClientDiv.removeChild(otherClientDiv.lastChild);
+    }
+    console.log("clearConnectList() exit");
 }
 
 

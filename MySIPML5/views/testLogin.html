@@ -1,0 +1,77 @@
+<div ng-controller="LoginController">
+    <label style="width: 100%;" align="center" id="txtRegStatus">
+    </label>
+    <h2>
+        Registration</h2>
+    <br />
+    <table style='width: 100%'>
+        <tr>
+            <td>
+                <label style="height: 100%">
+                    Display Name:</label>
+            </td>
+            <td>
+                <input type="text" style="width: 100%; height: 100%" id="txtDisplayName" value=""
+                       placeholder="e.g. John Doe" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="height: 100%">
+                    Private Identity<sup>*</sup>:</label>
+            </td>
+            <td>
+                <input type="text" style="width: 100%; height: 100%" id="txtPrivateIdentity" value=""
+                       placeholder="e.g. +33600000000" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="height: 100%">
+                    Public Identity<sup>*</sup>:</label>
+            </td>
+            <td>
+                <input type="text" style="width: 100%; height: 100%" id="txtPublicIdentity" value=""
+                       placeholder="e.g. sip:+33600000000@doubango.org" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="height: 100%">Password:</label>
+            </td>
+            <td>
+                <input type="password" style="width: 100%; height: 100%" id="txtPassword" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="height: 100%">Realm<sup>*</sup>:</label>
+            </td>
+            <td>
+                <input type="text" style="width: 100%; height: 100%" id="txtRealm" value="" placeholder="e.g. doubango.org" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                <input type="button" class="btn btn-success" id="btnRegister" value="LogIn" disabled onclick='sipRegister();' />
+                &nbsp;
+                <input type="button" class="btn btn-danger" id="btnUnRegister" value="LogOut" disabled onclick='sipUnRegister();' />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <p class="small"><sup>*</sup> <i>Mandatory Field</i></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <a class="btn" href="http://code.google.com/p/sipml5/wiki/Public_SIP_Servers" target="_blank">Need SIP account?</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <a class="btn" href="./expert.htm" target="_blank">Expert mode?</a>
+            </td>
+        </tr>
+    </table>
+</div>
