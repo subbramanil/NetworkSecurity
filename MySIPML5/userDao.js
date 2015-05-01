@@ -35,7 +35,7 @@ module.exports = {
 					console.log("file not found");
 			}
 		});
-		console.log("dao.addUser exit");
+		console.log("dao.addUser() exit");
     },
     readFile : function(){
         console.log("dao.readFile() entry");
