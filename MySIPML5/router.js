@@ -45,4 +45,9 @@ module.exports = function(app, cors)
 		res.render('register.html');
 	});
 
+	app.get('/views/dashboard', function(req, res){
+		console.log("Loading Login Page..");
+		res.render('dashboard.html');
+	});
+
 }

@@ -14,10 +14,10 @@ function tsdp_api_add_js_scripts(s_elt) {
 };
 
 // add tinySAK API
-tsdp_api_add_js_scripts('head', 'src/tinySAK/src/tsk_api.js');
+tsdp_api_add_js_scripts('head', 'js/sipml5/tinySAK/src/tsk_api.js');
 
 tsdp_api_add_js_scripts('head',
-    'src/tinySDP/src/headers/tsdp_header.js',
+    'js/sipml5/tinySDP/src/headers/tsdp_header.js',
     // 'src/tinySDP/src/headers/tsdp_header_A.js', #include_in<tsdp_header.js>
     // 'src/tinySDP/src/headers/tsdp_header_B.js', #include_in<tsdp_header.js>
     // 'src/tinySDP/src/headers/tsdp_header_C.js', #include_in<tsdp_header.js>
@@ -36,6 +36,6 @@ tsdp_api_add_js_scripts('head',
     // 'src/tinySDP/src/headers/tsdp_header_V.js', #include_in<tsdp_header.js>
     // 'src/tinySDP/src/headers/tsdp_header_Z.js' #include_in<tsdp_header.js>
 
-    'src/tinySDP/src/tsdp_message.js'
+    'js/sipml5/tinySDP/src/tsdp_message.js'
     //'src/tinySDP/src/tsdp_parser_message.js' #include_in<tsdp_message.js>
 );

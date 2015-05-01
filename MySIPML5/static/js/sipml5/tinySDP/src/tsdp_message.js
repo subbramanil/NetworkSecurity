@@ -221,6 +221,6 @@ tsdp_message.prototype.toString = function (s_endline) {
 
 if(!window.__b_release_mode){
     tsdp_api_add_js_scripts('head',
-    'src/tinySDP/src/tsdp_parser_message.js'
+    'js/sipml5/tinySDP/src/tsdp_parser_message.js'
     );
 }

@@ -7,15 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/angular.js"></script>
-        <script src="js/angular-route.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/sipml5/SIPml-api.js"></script>
-        <script src="js/sipml5/tinySAK/src/tsk_string.js"></script>
-        <script src="js/sipScript.js"></script>
-        <script src="js/expert.js"></script>
+
 	</head>
 	<body>
         <div class="wrapper">
@@ -26,25 +18,36 @@
                         <a class="logo" href="#">SIP Logo</a>
                         <ul class="nav hidden-xs" id="sidebar-footer">
                             <li>
-                              <a href=""><h3>SIP Firewall</h3>Made with Bootstrap</a>
+                              <a href=""><h3>MySIPML5</h3>Made with Bootstrap</a>
                             </li>
                         </ul>
                         <ul class="nav hidden-xs" id="sidebar-menu">
                             <li>
                                 <a href="#login">Login</a>
-                                <a href="#test">test</a>
-                                <a href="#call">Call</a>
-                                <a href="#testLogin">test login</a>
+                                <a href="dashboard">Dashboard</a>
                             </li>
                         </ul>
                     </div>
                     <!-- /sidebar -->
+                    <div class="column col-sm-9" id="main">
+                        <div class="padding">
+                            <div class="full col-sm-9">
+                                <div class="row" ng-view="">
 
-                    <div class="row" ng-view="">
-
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/sipml5/SIPml-api.js"></script>
+        <script src="js/sipScript.js"></script>
+        <script src="js/expert.js"></script>
 	</body>
 </html>

@@ -1,106 +1,118 @@
 <div ng-class="SettingsController">
-    <div class="span7 well">
-        <label align="center" id="txtInfo"> </label>
-        <h2> Expert settings</h2>
-        <br />
-        <table>
-            <tr>
-                <td>
-                    <label style="height: 100%">Disable Video:</label>
-                </td>
-                <td>
-                    <input type='checkbox' id='cbVideoDisable' />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">Enable RTCWeb Breaker<sup><a href="#aRTCWebBreaker">[1]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type='checkbox' id='cbRTCWebBreaker' />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">WebSocket Server URL<sup><a href="#aWebSocketServerURL">[2]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type="text" style="width: 100%; height: 100%" id="txtWebsocketServerUrl" value="" placeholder="e.g. ws://sipml5.org:5062" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">SIP outbound Proxy URL<sup><a href="#aSIPOutboundProxyURL">[3]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type="text" style="width: 100%; height: 100%" id="txtSIPOutboundProxyUrl" value="" placeholder="e.g. udp://sipml5.org:5060" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">ICE Servers<sup><a href="#aIceServers">[4]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type="text" style="width: 100%; height: 100%" id="txtIceServers" value="" placeholder="e.g. [{ url: 'stun:stun.l.google.com:19302'}, { url:'turn:user@numb.viagenie.ca', credential:'myPassword'}]" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">Max bandwidth (kbps)<sup><a href="#aBandwidth">[5]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type="text" style="width: 100%; height: 100%" id="txtBandwidth" value="" placeholder="{ audio:64, video:512 }" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">Video size<sup><a href="#aSizeVideo">[6]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type="text" style="width: 100%; height: 100%" id="txtSizeVideo" value="" placeholder="{ minWidth: 640, minHeight:480, maxWidth: 640, maxHeight:480 }" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">Disable 3GPP Early IMS<sup><a href="#aEarlyIMS">[7]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type='checkbox' id='cbEarlyIMS' />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">Disable debug messages<sup><a href="#aDebugMessages">[8]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type='checkbox' id='cbDebugMessages' />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">Cache the media stream<sup><a href="#aCacheMediaStream">[9]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type='checkbox' id='cbCacheMediaStream' />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label style="height: 100%">Disable Call button options<sup><a href="#aCallButtonOptions">[10]</a></sup>:</label>
-                </td>
-                <td>
-                    <input type='checkbox' id='cbCallButtonOptions' />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="right">
-                    <button type="submit" class="btn btn-success" id="btnSave" value="save" onclick="settingsSave();">Save</button>
-                    <!--<input type="button" class="btn-success" id="btnSave" value="Save" onclick='settingsSave();' />-->
-                    &nbsp;
-                    <input type="button" class="btn-danger" id="btnRevert" value="Revert" onclick='settingsRevert();' />
-                </td>
-            </tr>
+    <section>
+        <header>
+            <div class="col-sm-12" id="featured">
+                <div class="page-header text-muted">
+                    Expert Settings
+                </div>
+            </div>
+        </header>
+        <div class="row">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="cbVideoDisable">Disable Video</label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type='checkbox' id='cbVideoDisable' />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="cbRTCWebBreaker">
+                        Enable RTCWeb Breaker<sup><a href="#aRTCWebBreaker">[1]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type='checkbox' id='cbRTCWebBreaker' />
+                    </div>
+                </div>
 
-        </table>
-    </div>
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="txtWebsocketServerUrl">
+                        WebSocket Server URL<sup><a href="#aWebSocketServerURL">[2]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type="url" class="form-control" id="txtWebsocketServerUrl" value="" placeholder="e.g. udp://sipml5.org:5060" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="txtSIPOutboundProxyUrl">
+                        SIP outbound Proxy URL<sup><a href="#aSIPOutboundProxyURL">[3]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type="url" class="form-control" id="txtSIPOutboundProxyUrl" value="" placeholder="e.g. udp://sipml5.org:5060" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="txtIceServers">
+                        ICE Servers<sup><a href="#aIceServers">[4]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type="text" class="form-control" id="txtIceServers" value="" placeholder="e.g. [{ url: 'stun:stun.l.google.com:19302'}, { url:'turn:user@numb.viagenie.ca', credential:'myPassword'}]" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="txtBandwidth">
+                        Max bandwidth (kbps)<sup><a href="#aBandwidth">[5]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type="text" class="form-control" id="txtBandwidth" value="" placeholder="{ audio:64, video:512 }" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="txtSizeVideo">
+                        Video size<sup><a href="#aSizeVideo">[6]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type="text" class="form-control" id="txtSizeVideo" value="" placeholder="{ minWidth: 640, minHeight:480, maxWidth: 640, maxHeight:480 }" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="cbEarlyIMS">
+                        Disable 3GPP Early IMS<sup><a href="#aEarlyIMS">[7]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type='checkbox' id='cbEarlyIMS' />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="cbDebugMessages">
+                        Disable debug messages<sup><a href="#aDebugMessages">[8]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type='checkbox' id='cbDebugMessages' />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="cbCacheMediaStream">
+                        Cache the media stream<sup><a href="#aCacheMediaStream">[9]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type='checkbox' id='cbCacheMediaStream' />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-4 col-md-8 col-sm-12 text-center control-label" for="cbVideoDisable">
+                        Disable Call button options<sup><a href="#aCallButtonOptions">[10]</a></sup>
+                    </label>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <input type='checkbox' id='cbCallButtonOptions' />
+                    </div>
+                </div>
+                <div class="form-group pull-right">
+                    <button type="submit" class="btn btn-success" id="btnSave" value="save" onclick="settingsSave();">Save</button>
+                    &nbsp;
+                    <button type="button" class="btn btn-danger" id="btnRevert" value="Revert" onclick='settingsRevert();' >Revert</button>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <label id="txtInfo" class="text-info text-success"> </label>
+        </footer>
+    </section>
 </div>

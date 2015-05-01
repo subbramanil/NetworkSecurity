@@ -31,6 +31,10 @@ sipApp.config(['$routeProvider',
                 templateUrl: '/views/expert',
                 controller: 'SettingsController'
             }).
+            when('/dashboard', {
+                templateUrl: '/views/dashboard',
+                controller: 'SettingsController'
+            }).
             otherwise({
                 redirectTo: '/home'
             });

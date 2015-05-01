@@ -559,7 +559,7 @@ function tsip_header_Referred_By(o_uri){ tsip_header_NameAddr.call(this, tsip_he
 
 if(!window.__b_release_mode){
 	tsip_api_add_js_scripts('head',
-		'src/tinySIP/src/headers/tsip_header_NameAddrArray.js' // 'P-Asserted-Identity', 'P-Associated-URI', 'Path', 'Record-Route', 'Route', 'Service-Route'
+		'js/sipml5/tinySIP/src/headers/tsip_header_NameAddrArray.js' // 'P-Asserted-Identity', 'P-Associated-URI', 'Path', 'Record-Route', 'Route', 'Service-Route'
 	);
 }
 

@@ -1,5 +1,6 @@
 var fs = require("fs");
-var dirName = "/etc/asterisk/";
+var dirName = "";
+//var dirName = "/etc/asterisk/";
 var fileName = dirName+"sip.conf";
 
 module.exports = {
