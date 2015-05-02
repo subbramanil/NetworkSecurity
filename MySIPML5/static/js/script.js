@@ -42,6 +42,23 @@ sipApp.config(['$routeProvider',
 
 sipApp.controller('RegisterController', ['$scope', '$http', function ($scope, $http) {
 
+    $scope.userDetails = {};
+
+    $scope.registerUser = function(user){
+        console.log("RegisterController.registerUser() entry");
+        $scope.userDetails = angular.copy(user);
+        console.log($scope.userDetails);
+
+        $http.post('user/registerUser', {data:$scope.userDetails}).
+            success(function(data, status, headers, config) {
+                console.log(data);
+                console.log("Success")
+            }).
+            error(function(data, status, headers, config) {
+                console.log("Error in RegisterController.registerUser() on posting to backend")
+            });
+        console.log("RegisterController.registerUser() exit");
+    };
     /*$scope.choices = [
         {name: 'General Surgery', col: 1},
         {name: 'Cardiac Surgery', col: 2},
@@ -165,6 +182,17 @@ sipApp.controller('RegisterController', ['$scope', '$http', function ($scope, $h
 }]);
 
 sipApp.controller('LoginController', ['$scope', '$http', function ($scope, $http) {
+    $scope.login = function(){
+        console.log("RegisterController.login() entry");
+        sipRegister();
+        console.log("RegisterController.login() exit");
+    };
+
+    $scope.logout = function(){
+        console.log("RegisterController.login() entry");
+        sipUnRegister();
+        console.log("RegisterController.login() exit");
+    };
 }]);
 
 sipApp.controller('HomeController', ['$scope', '$http', function ($scope, $http) {
@@ -174,4 +202,17 @@ sipApp.controller('CallController', ['$scope', '$http', function ($scope, $http)
 }]);
 
 sipApp.controller('SettingsController', ['$scope', '$http', function ($scope, $http) {
+
+    $scope.saveSettings = function(){
+        console.log("SettingsController.saveSettings() entry");
+        settingsSave();
+        console.log("SettingsController.saveSettings() exit");
+    };
+
+    $scope.revertSettings = function(){
+        console.log("SettingsController.revertSettings() entry");
+        settingsRevert();
+        console.log("SettingsController.revertSettings() exit");
+    };
+
 }]);

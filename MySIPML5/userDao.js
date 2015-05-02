@@ -39,16 +39,22 @@ module.exports = {
     },
     readFile : function(){
         console.log("dao.readFile() entry");
-        fs.open(fileName, "r", function(error, fd) {
-            var buffer = new Buffer(stats.size);
+        fs.exists(fileName, function(exists) {
+            if (exists) {
+                fs.stat(fileName, function(error, stats) {
+                    fs.open(fileName, "r", function (error, fd) {
+                        var buffer = new Buffer(stats.size);
 
-            fs.read(fd, buffer, 0, buffer.length, null, function(error, bytesRead, buffer) {
-                var data = buffer.toString("utf8", 0, buffer.length);
+                        fs.read(fd, buffer, 0, buffer.length, null, function (error, bytesRead, buffer) {
+                            var data = buffer.toString("utf8", 0, buffer.length);
 
-                console.log(data);
-                fs.close(fd);
-            });
+                            console.log(data);
+                            fs.close(fd);
+                        });
+                    });
+                    console.log("dao.readFile() exit");
+                });
+            }
         });
-        console.log("dao.readFile() exit");
     }
 }; 

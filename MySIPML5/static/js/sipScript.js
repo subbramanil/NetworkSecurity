@@ -576,8 +576,8 @@ function onDivCallCtrlMouseMove(evt) {
 function uiOnConnectionEvent(b_connected, b_connecting) { // should be enum: connecting, connected, terminating, terminated
     btnRegister.disabled = b_connected || b_connecting;
     btnUnRegister.disabled = !b_connected && !b_connecting;
-    btnCall.disabled = !(b_connected && tsk_utils_have_webrtc() && tsk_utils_have_stream());
-    btnHangUp.disabled = !oSipSessionCall;
+    //btnCall.disabled = !(b_connected && tsk_utils_have_webrtc() && tsk_utils_have_stream());
+    //btnHangUp.disabled = !oSipSessionCall;
 }
 
 function uiVideoDisplayEvent(b_local, b_added) {
@@ -628,7 +628,7 @@ function uiVideoDisplayEvent(b_local, b_added) {
 }
 
 function uiVideoDisplayShowHide(b_show) {
-    if (b_show) {
+    /*if (b_show) {
         tdVideo.style.height = '340px';
         divVideo.style.height = navigator.appName == 'Microsoft Internet Explorer' ? '100%' : '340px';
     }
@@ -636,7 +636,7 @@ function uiVideoDisplayShowHide(b_show) {
         tdVideo.style.height = '0px';
         divVideo.style.height = '0px';
     }
-    btnFullScreen.disabled = !b_show;
+    btnFullScreen.disabled = !b_show;*/
 }
 
 function uiDisableCallOptions() {
@@ -748,9 +748,9 @@ function onSipEventStack(e /*SIPml.Stack.Event*/) {
         stopRingTone();
 
         uiVideoDisplayShowHide(false);
-        divCallOptions.style.opacity = 0;
+        //divCallOptions.style.opacity = 0;
 
-        txtCallStatus.innerHTML = '';
+        //txtCallStatus.innerHTML = '';
         txtRegStatus.innerHTML = bFailure ? "<i>Disconnected: <b>" + e.description + "</b></i>" : "<i>Disconnected</i>";
         break;
     }

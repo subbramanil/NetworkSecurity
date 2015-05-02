@@ -1,74 +1,53 @@
 <div ng-controller="RegisterController">
-    <!-- main -->
-    <div class="column col-sm-9" id="main">
-        <div class="padding">
-            <div class="full col-sm-9">
 
-                <!-- content -->
-                <div class="row">
-                    <div class="col-sm-12" id="featured">
-                      <div class="page-header text-muted">
-                        Registration
-                      </div>
-                    </div>
-                </div>
+    <!-- content -->
+    <div class="row">
+        <div class="col-sm-12" id="featured">
+          <div class="page-header text-muted">
+            Registration
+          </div>
+        </div>
+    </div>
 
-                <div class="well-lg">
-                    <form action="" method="post">
-                        <div class="row">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <h4>Account Name</h4>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Sip2Sip user id" aria-describedby="basic-addon2">
-                                        <span class="input-group-addon" id="basic-addon2">@sip2sip.info</span>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <h4>Password</h4>
-                                    <input type="password" class="form-control" required/>
-                                </li>
-                                <li class="list-group-item">
-                                    <h4>First Name</h4>
-                                    <input type="text" class="form-control" required/>
-                                </li>
-                                <li class="list-group-item">
-                                    <h4>Last Name</h4>
-                                    <input type="text" class="form-control" required/>
-                                </li>
-                                <li class="list-group-item">
-                                    <h4>Email</h4>
-                                    <input type="email" class="form-control" required placeholder="someone@site.com"/>
-                                </li>
-                                <li class="list-group-item">
-                                    <h4>Phone Number</h4>
-                                    <input type="tel" class="form-control" placeholder="xxx-xxx-xxxx" maxlength="12" title="Pls enter phone number in the given format" pattern="^\d{3}-\d{3}-\d{4}$" required/>
-                                </li>
-                            </ul>
+    <div class="well-lg">
+        <form action="" method="post">
+            <div class="row">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4>Account Name</h4>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Sip2Sip user id" aria-describedby="basic-addon2" ng-model="userDetails.sipAccountName">
+                            <span class="input-group-addon" id="basic-addon2">@sip2sip.info</span>
                         </div>
-                        <div class="row">
-                            <input type="submit" value="Register" class="btn btn-primary pull-right"/>
-                            <!--<button class="btn btn-primary pull-right">Register</button>-->
-                        </div>
-                    </form>
-                </div>
-
-                <hr>
-
-                <div class="row" id="footer">
-                  <div class="col-sm-6">
-
-                  </div>
-                  <div class="col-sm-6">
-                    <p>
-                    <a href="#" class="pull-right">©Copyright Inc.</a>
-                    </p>
-                  </div>
-                </div>
-
-              <hr>
-
-            </div><!-- /col-9 -->
-        </div><!-- /padding -->
+                    </li>
+                    <li class="list-group-item">
+                        <h4>Password</h4>
+                        <input type="password" class="form-control" required ng-model="userDetails.password"/>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>First Name</h4>
+                        <input type="text" class="form-control" required ng-model="userDetails.firstName"/>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>Last Name</h4>
+                        <input type="text" class="form-control" required ng-model="userDetails.lastName"/>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>Email</h4>
+                        <input type="email" class="form-control" required placeholder="someone@site.com" ng-model="userDetails.email"/>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>Phone Number</h4>
+                        <input type="tel" class="form-control" placeholder="xxx-xxx-xxxx" maxlength="12"
+                               title="Pls enter phone number in the given format" pattern="^\d{3}-\d{3}-\d{4}$" required
+                               ng-model="userDetails.phone"/>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <!--<input type="submit" value="Register" class="btn btn-primary pull-right"/>-->
+                <button class="btn btn-primary pull-right" ng-click="registerUser(userDetails)">Register</button>
+            </div>
+        </form>
     </div>
 </div>

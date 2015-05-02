@@ -41,9 +41,15 @@ module.exports = function(app, cors)
 
 	app.get('/views/register', function(req, res){
 		console.log("Loading Register Page..");
-		dao.addUser();
-        dao.readFile();
 		res.render('register.html');
+	});
+
+	app.post('user/registerUser', function(req, res){
+		console.log("Registering User");
+		console.log(req.body);
+		//dao.addUser();
+		//dao.readFile();
+		res.send("received post request");
 	});
 
 	app.get('/views/dashboard', function(req, res){

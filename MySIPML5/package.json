@@ -1,20 +1,21 @@
 {
-  "name": "SemWebProject",
-  "description": "Semantic Web Project using Google Visualization API with rdf data",
+  "name": "MySIPML5",
+  "description": "VOIP Application using SIPML5",
   "version": "0.0.1",
   "author": "Subbramanian Lakshmanan <sxl146830@utdallas.edu>",
   "bugs": {
-   "url": "https://github.com/subbramanil/app-challenge-me/issues"
+    "url": "https://github.com/subbramanil/app-challenge-me/issues"
   },
   "homepage": "https://github.com/subbramanil/app-challenge-me",
   "repository": {
-   "type": "git",
-   "url": "git@github.com:subbramanil/app-challenge-me.git"
+    "type": "git",
+    "url": "git@github.com:subbramanil/app-challenge-me.git"
   },
   "main": "./server.js",
   "dependencies": {
+    "body-parser": "^1.12.3",
+    "cors": " *",
     "ejs": "~1.0.0",
-    "express": "~4.10.0",
-    "cors":" *"
+    "express": "~4.10.0"
   }
 }
