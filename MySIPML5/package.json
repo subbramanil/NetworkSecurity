@@ -4,12 +4,12 @@
   "version": "0.0.1",
   "author": "Subbramanian Lakshmanan <sxl146830@utdallas.edu>",
   "bugs": {
-    "url": "https://github.com/subbramanil/app-challenge-me/issues"
+    "url": "https://github.com/subbramanil/NetworkSecurity/issues"
   },
-  "homepage": "https://github.com/subbramanil/app-challenge-me",
+  "homepage": "https://github.com/subbramanil/NetworkSecurity",
   "repository": {
     "type": "git",
-    "url": "git@github.com:subbramanil/app-challenge-me.git"
+    "url": "git@github.com:subbramanil/NetworkSecurity.git"
   },
   "main": "./server.js",
   "dependencies": {
