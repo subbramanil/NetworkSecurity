@@ -47,9 +47,10 @@ sipApp.controller('RegisterController', ['$scope', '$http', function ($scope, $h
     $scope.registerUser = function(user){
         console.log("RegisterController.registerUser() entry");
         $scope.userDetails = angular.copy(user);
+        console.log($('.g-recaptcha').val());
         console.log($scope.userDetails);
 
-        $http.post('user/registerUser', {data:$scope.userDetails}).
+        $http.post('/user/registerUser', {data:$scope.userDetails}).
             success(function(data, status, headers, config) {
                 console.log(data);
                 console.log("Success")

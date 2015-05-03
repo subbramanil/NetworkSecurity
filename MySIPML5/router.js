@@ -44,12 +44,12 @@ module.exports = function(app, cors)
 		res.render('register.html');
 	});
 
-	app.post('user/registerUser', function(req, res){
+	app.post('/user/registerUser', function(req, res){
 		console.log("Registering User");
-		console.log(req.body);
-		//dao.addUser();
-		//dao.readFile();
-		res.send("received post request");
+        console.log(req.body.g-recaptcha-response);
+		dao.addUser(req.body.data);
+		res.send("Success");
+        res.end();
 	});
 
 	app.get('/views/dashboard', function(req, res){
