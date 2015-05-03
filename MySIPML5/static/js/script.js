@@ -44,26 +44,22 @@ sipApp.controller('RegisterController', ['$scope', '$http', function ($scope, $h
 
     $scope.userDetails = {};
 
-    var verifyCallback = function(response) {
-        alert(response);
-    };
-
-    var onloadCallback = function() {
-        alert("grecaptcha is ready!");
-    };
-
-    //Recaptcha.create("6LfuQQYTAAAAAJwwRumQFPvJlNn0kXmLcWupPZ7L",
-    //    "greCAP",
-    //    {
-    //        theme: "red",
-    //        callback: verifyCallback
-    //    }
-    //);
+    //$scope.renderReCaptcha = function(){
+    //    var elemID = grecaptcha.render('greCAP', {
+    //        'sitekey' : '6LfuQQYTAAAAAJwwRumQFPvJlNn0kXmLcWupPZ7L',
+    //        'theme' : 'light'
+    //    });
+    //    console.log(elemID);
+    //};
+    //
+    //$scope.renderReCaptcha();
 
     $scope.registerUser = function(user){
         console.log("RegisterController.registerUser() entry");
         $scope.userDetails = angular.copy(user);
-        console.log($('.g-recaptcha').val());
+        //grecaptcha.getResponse();
+        //console.log(grecaptcha.getResponse());
+        console.log($('#greCAP').val());
         console.log($scope.userDetails);
 
         $http.post('/user/registerUser', {data:$scope.userDetails}).

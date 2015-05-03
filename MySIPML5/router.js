@@ -48,6 +48,21 @@ module.exports = function(app, cors)
 		console.log("Registering User");
         //console.log(req.body.g-recaptcha-response);
 		dao.addUser(req.body.data);
+
+        //$.ajax({
+        //    url: 'https://www.google.com/recaptcha/api/siteverify',
+        //    dataType: 'text/json',
+        //    type: 'post',
+        //    contentType: 'application/x-www-form-urlencoded',
+        //    data: {"secret":"6LfuQQYTAAAAAJfp8bFVb5VoSCGo-BvPi-KO7Bam", "response":"" },
+        //    success: function( data, textStatus, jQxhr ){
+        //        console.log(data);
+        //    },
+        //    error: function( jqXhr, textStatus, errorThrown ){
+        //        console.log( jqXhr + errorThrown );
+        //    }
+        //});
+
 		res.send("Success");
         res.end();
 	});

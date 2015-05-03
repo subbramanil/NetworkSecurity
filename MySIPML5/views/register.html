@@ -1,3 +1,14 @@
+<script type="text/javascript">
+    var onloadCallback = function() {
+        var elemID = grecaptcha.render('greCAP', {
+            'sitekey' : '6LfuQQYTAAAAAJwwRumQFPvJlNn0kXmLcWupPZ7L',
+            'callback' : function(response) {
+                console.log(response);
+            }
+        });
+    };
+</script>
+
 <div ng-controller="RegisterController">
 
     <!-- content -->
@@ -43,7 +54,7 @@
                                ng-model="userDetails.phone"/>
                     </li>
                     <li class="list-group-item">
-                        <div class="g-recaptcha" data-sitekey="6LfuQQYTAAAAAJwwRumQFPvJlNn0kXmLcWupPZ7L" id="greCAP"></div>
+                        <div class="g-recaptcha" id="greCAP"></div>
                     </li>
                 </ul>
 
@@ -53,5 +64,6 @@
                 <button class="btn btn-primary pull-right" ng-click="registerUser(userDetails)">Register</button>
             </div>
         </form>
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     </div>
 </div>
