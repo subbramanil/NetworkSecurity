@@ -46,7 +46,7 @@ module.exports = function(app, cors)
 
 	app.post('/user/registerUser', function(req, res){
 		console.log("Registering User");
-        console.log(req.body.g-recaptcha-response);
+        //console.log(req.body.g-recaptcha-response);
 		dao.addUser(req.body.data);
 		res.send("Success");
         res.end();

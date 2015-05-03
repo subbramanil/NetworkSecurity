@@ -44,6 +44,22 @@ sipApp.controller('RegisterController', ['$scope', '$http', function ($scope, $h
 
     $scope.userDetails = {};
 
+    var verifyCallback = function(response) {
+        alert(response);
+    };
+
+    var onloadCallback = function() {
+        alert("grecaptcha is ready!");
+    };
+
+    //Recaptcha.create("6LfuQQYTAAAAAJwwRumQFPvJlNn0kXmLcWupPZ7L",
+    //    "greCAP",
+    //    {
+    //        theme: "red",
+    //        callback: verifyCallback
+    //    }
+    //);
+
     $scope.registerUser = function(user){
         console.log("RegisterController.registerUser() entry");
         $scope.userDetails = angular.copy(user);
