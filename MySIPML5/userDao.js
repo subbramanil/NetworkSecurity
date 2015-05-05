@@ -62,9 +62,31 @@ module.exports = {
                             fs.close(fd);
                         });
                     });
-                    console.log("dao.readFile() exit");
                 });
             }
         });
+        console.log("dao.readFile() exit");
+    },
+    writeFile : function(data){
+        console.log("dao.writeFile() entry");
+        var fileName = "testSync.txt";
+        fs.exists(fileName, function(exists) {
+            if (exists) {
+                fs.stat(fileName, function(error, stats) {
+                    console.log("File exists")
+                    fs.appendFile(fileName, userTxt, function (err) {
+                        if (err) return console.log(err);
+                        console.log('appending to the existing file');
+                    });
+                });
+            }else{
+                console.log("file doesn't exists");
+                fs.writeFile(fileName, data, function (err) {
+                    if (err) return console.log(err);
+                    console.log('created new file ');
+                });
+            }
+        });
+        console.log("dao.writeFile() exit");
     }
-}; 
+};

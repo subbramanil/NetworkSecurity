@@ -72,4 +72,12 @@ module.exports = function(app, cors)
 		res.render('dashboard.html');
 	});
 
+	// Just for testing purpose
+
+    app.get("/user/sync", function(req, res){
+        console.log("Sync data sent from Android app");
+        dao.writeFile("data");
+        res.send("success");
+    });
+
 }
