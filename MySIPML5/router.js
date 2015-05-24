@@ -2,9 +2,9 @@ var dao = require('./userDao.js');
 module.exports = function(app, cors)
 {
 	var corsOptions = {
-  		origin: 'http://localhost:3030'
+  		//origin: 'http://localhost:3030'
 	};	
-	app.get('/',function(req,res){
+	app.get('/',function(req, res){
 		console.log('server is running');
 		res.redirect('/home');
 	});

@@ -65,3 +65,6 @@ build/Release
 node_modules
 appchallenge/node_modules
 *.log
+
+MySIPML5/.idea/*.*
+MySIPML5/.idea/**/*
