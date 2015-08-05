@@ -11,7 +11,7 @@ module.exports = function(app, cors)
 
 	app.get('/home', cors(corsOptions), function(req, res){
 		console.log("Loading Index Page..");
-		res.render('index.html');
+		res.render('home.html');
 	});
 
 	app.get('/views/login', function(req, res){
