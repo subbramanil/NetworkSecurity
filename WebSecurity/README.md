@@ -8,4 +8,6 @@ mysql -u <user> -p < userdb_backup.sql
 
 Update username and password in db_init.php
 
+Sample SQL injection queries can be found in the excel file
+
 
